@@ -1,21 +1,15 @@
-# Ganymede Take-Home Exercise
+Edited ristretto drink in drinks.json file to say “water_ratio” and “coffee_ratio” instead of “water” and “coffee”
 
-Thank you for taking an interest in Ganymede! As part of our interview process, we want to offer you the opportunity to demonstrate your skills and thought process, outside the context of an in-person discussion.
+1a. Assume that “coffee_ratio: 1” and “milk_ratio: 2” implies for every one part coffee, there are two parts milk.
+1b. Water is not explicitly stated in flat_white, but espresso ratio is, so work backwards
 
-Feel free to spend as much time as you'd like on the component you've been assigned, though we would recommend spending no more than 2-4 hours on this and letting us know the amount of time you've spent.
 
-As you answer these questions, please be mindful of style, robustness, and correctness; we'll be looking for thoughtfulness around not just the solution, but the ease with which others can extend upon the solutions you create. Please note down any assumptions that you make while answering these questions, and feel free to reach out to us for any clarifications.
+1c i. If drink does not exist, print out some error message, otherwise iterate through the list of drinks and print out their coffee, water, and milk values using the get_drink_params method
+1c ii. If drink is known, prints out something, if not known, add it to coffee_recipes
+1c iii. If time permitted, would try to implement a BFS search instead of the iterative approach used. Can imagine traversing the dictionary as traversing a tree, with going from “espresso_ratio” to the “espresso” drink to gather its parameters. Iterative approach also assumes the only ratios that exist are water_ratio, milk_ratio, coffee_ratio, and espresso_ratio
 
-## The Scenario
 
-Welcome to the future! You find yourself employed at a Chats N' Coffee, a pub-like coffee chain where customers bring their thoughts, questions, and concerns to the baristas - who, in return, engage with thoughtful dialogue, healthy banter, and debate.
+2a. P2_worker: takes drink orders in form of a queue, sleeps thread for duration of creation time specified early. can return [None, None, None], so must be able to handle this scenario as well as a successful output. My implementation uses the queue as a parameter in the createDrink function. This made it easier to iterate through the order queue.
+2b. P2_task: if requested drink not on the menu, print out some error message, otherwise add the drink to the queue for P2_worker to make
+3. An effective method would be to implement a load-balancing algorithm that allocates orders to the machines based on the time it will take their queue to finish, e.g. it would be inefficient to give an order to machine 1 when it’s order queue is already twice as long as machine 2. In the case there are no order queues for any machine, it will allocate to p3. 
 
-One key challenge that the company has recently faced is that the espresso machines at the chain are cumbersome to manually operate, detracting from conversations that the company is known for. You've been tasked with automating the espresso machine so that baristas can spend more time engaging with the clientele.
-
-### Setup Instructions
-
-1. Fork the repo and clone to your development machine.
-   1a) Ensure that python3.7+ is running on your machine and install if necessary.
-2. Install [rabbitmq](https://www.rabbitmq.com/download.html) on your development machine.
-3. Navigate to the python/ directory and create a virtual environment by running `python3 -m venv .venv`.
-4. Activate the virtual environment by running `source .venv/bin/activate`.
