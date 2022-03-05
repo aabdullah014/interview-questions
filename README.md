@@ -2,9 +2,7 @@ Edited ristretto drink in drinks.json file to say “water_ratio” and “coffe
 
 1. - a. Assume that “coffee_ratio: 1” and “milk_ratio: 2” implies for every one part coffee, there are two parts milk.
    - b. Water is not explicitly stated in flat_white, but espresso ratio is, so work backwards
-
-
-1. - c i. If drink does not exist, print out some error message, otherwise iterate through the list of drinks and print out their coffee, water, and milk values using the get_drink_params method
+   - c i. If drink does not exist, print out some error message, otherwise iterate through the list of drinks and print out their coffee, water, and milk values using the get_drink_params method
    - c ii. If drink is known, prints out something, if not known, add it to coffee_recipes
    - c iii. If time permitted, would try to implement a BFS search instead of the iterative approach used. Can imagine traversing the dictionary as traversing a tree, with going from “espresso_ratio” to the “espresso” drink to gather its parameters. Iterative approach also assumes the only ratios that exist are water_ratio, milk_ratio, coffee_ratio, and espresso_ratio
 
