@@ -1,7 +1,7 @@
 Edited ristretto drink in drinks.json file to say “water_ratio” and “coffee_ratio” instead of “water” and “coffee”
 
-1. a. Assume that “coffee_ratio: 1” and “milk_ratio: 2” implies for every one part coffee, there are two parts milk.
-   b. Water is not explicitly stated in flat_white, but espresso ratio is, so work backwards
+1. - Assume that “coffee_ratio: 1” and “milk_ratio: 2” implies for every one part coffee, there are two parts milk.
+   - Water is not explicitly stated in flat_white, but espresso ratio is, so work backwards
 
 
 1. c i. If drink does not exist, print out some error message, otherwise iterate through the list of drinks and print out their coffee, water, and milk values using the get_drink_params method
